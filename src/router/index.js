@@ -1,15 +1,30 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from '@/components/home';
+import Shopping from '@/components/shopping';
+import Cart from '@/components/cart'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
-    }
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/shopping',
+      name: 'shopping',
+      components: {
+      	shopping:Shopping
+      }
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: Cart
+    },
   ]
 })
